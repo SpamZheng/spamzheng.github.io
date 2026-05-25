@@ -25,7 +25,9 @@
         <section id="about" class="glass-card hero-section">
             <div class="sparkle-icon">✨</div>
             <h1>Hi, I'm Samantha Zheng</h1>
-            <p class="subtitle">Content Creator & Business Strategist</p>
+            
+            <p class="subtitle">I am a <span id="typewriter"></span><span class="cursor">|</span></p>
+            
             <p class="bio">
                 Welcome to my digital space! I am an MBA student specializing in the intersection of 
                 <strong>Finance and Marketing</strong>. Alongside my academic focus, I am a business owner and 
@@ -80,6 +82,48 @@
         </section>
 
     </div>
+
+    <script>
+        const words = ["Content Creator", "Business Strategist", "Developer", "Coder"];
+        let i = 0;
+        let timer;
+
+        function typingEffect() {
+            let word = words[i].split("");
+            var loopTyping = function() {
+                if (word.length > 0) {
+                    document.getElementById('typewriter').innerHTML += word.shift();
+                } else {
+                    setTimeout(deletingEffect, 2000); // How long it stays typed before backspacing
+                    return false;
+                }
+                timer = setTimeout(loopTyping, 100); // Typing speed
+            };
+            loopTyping();
+        }
+
+        function deletingEffect() {
+            let word = words[i].split("");
+            var loopDeleting = function() {
+                if (word.length > 0) {
+                    word.pop();
+                    document.getElementById('typewriter').innerHTML = word.join("");
+                } else {
+                    if (words.length > (i + 1)) {
+                        i++;
+                    } else {
+                        i = 0;
+                    }
+                    setTimeout(typingEffect, 500); // Break time before next word starts typing
+                    return false;
+                }
+                timer = setTimeout(loopDeleting, 60); // Backspacing speed
+            };
+            loopDeleting();
+        }
+
+        typingEffect();
+    </script>
 
 </body>
 </html>
