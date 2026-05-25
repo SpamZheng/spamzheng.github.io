@@ -24,7 +24,7 @@
         
         <section id="about" class="glass-card hero-section">
             <div class="sparkle-icon">✨</div>
-            <h1>Hi, I'm Samantha Zheng</h1>
+            <h1>Sup, I'm Samantha Zheng!</h1>
             
             <p class="subtitle"><span id="typewriter"></span><span class="cursor">|</span></p>
             
@@ -34,7 +34,7 @@
                 digital creator managing brand collaborations and executing data-driven digital marketing campaigns. 
                 I love turning creative visions into cohesive brand strategies.
             </p>
-            <a href="resume.pdf" target="_blank" class="btn">View My Resume</a>
+            <a href="resume.pdf" target="_blank" class="fun-btn">See more about Sam! 👋</a>
         </section>
 
         <section id="portfolio" class="glass-card portfolio-section">
@@ -89,7 +89,7 @@
             "I am a daughter.", 
             "I am an MBA student.", 
             "I am a social media influencer.", 
-            "I am Samantha Zheng."
+            "I am Sam."
         ];
         let i = 0;
         let timer;
@@ -100,10 +100,10 @@
                 if (letters.length > 0) {
                     document.getElementById('typewriter').innerHTML += letters.shift();
                 } else {
-                    setTimeout(deletingEffect, 2000); // Wait time before backspacing starts
+                    setTimeout(deletingEffect, 2000);
                     return false;
                 }
-                timer = setTimeout(loopTyping, 80); // Speed of typing letters
+                timer = setTimeout(loopTyping, 80);
             };
             loopTyping();
         }
@@ -120,10 +120,10 @@
                     } else {
                         i = 0;
                     }
-                    setTimeout(typingEffect, 400); // Break time before typing the next phrase
+                    setTimeout(typingEffect, 400);
                     return false;
                 }
-                timer = setTimeout(loopDeleting, 40); // Speed of backspacing letters
+                timer = setTimeout(loopDeleting, 40);
             };
             loopDeleting();
         }
