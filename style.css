@@ -1,132 +1,141 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samantha Zheng | Portfolio</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-</head>
-<body>
+/* Custom Hot Pink Glassmorphism Theme */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">
-                <img src="favicon.png" alt="Logo" class="nav-logo-icon">
-                Samantha Zheng
-            </a>
-            <div class="nav-links">
-                <a href="#about">Starring: Sam Zheng!</a>
-                <a href="#portfolio">See Sam more!</a>
-                <a href="#contact">Say hi to Sam!</a>
-            </div>
-        </div>
-    </nav>
+:root {
+    --hot-pink: #ff007f;
+    --glass-bg: rgba(255, 255, 255, 0.04);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --text-light: #ffffff;
+    --text-accent: #ffb3d9;
+}
 
-    <div class="main-wrapper">
-        
-        <section id="about" class="glass-card hero-section">
-            <div class="sparkle-icon">✨</div>
-            <h1>Sup, I'm Samantha Zheng!</h1>
-            
-            <p class="subtitle"><span id="typewriter"></span><span class="cursor">|</span></p>
-            
-            <p class="bio">
-                Welcome to Sam's space! I am an MBA student specializing in the intersection of 
-                <strong>Finance and Marketing</strong>. I am also a social media influencer and 
-                digital creator managing brand collaborations and executing data-driven digital marketing campaigns. 
-                I love making creative visions come to life.
-            </p>
-            <a href="resume.pdf" target="_blank" class="fun-btn">See Sam more! 👋</a>
-        </section>
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--text-light);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    
+    /* Full-screen fixed background picture */
+    background: linear-gradient(rgba(255, 0, 127, 0.25), rgba(40, 0, 20, 0.55)), url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
 
-        <section id="portfolio" class="glass-card portfolio-section">
-            <h2 class="section-title">Sam-ples of Sam! ✨</h2>
-            <div class="portfolio-grid">
-                
-                <div class="project-item">
-                    <span class="card-badge">Social Media</span>
-                    <h3>TikTok Business Strategy & Creator Campaigns</h3>
-                    <p class="project-tags">Influencer Marketing • Brand Growth</p>
-                    <p>Managing end-to-end creative assets and affiliate initiatives. Optimizing content performance, tracking conversion rate data, and building community engagement for top-tier beauty and fashion brands.</p>
-                    <a href="https://www.tiktok.com/@samzheng99" target="_blank" rel="noopener noreferrer" class="project-link">Watch me on TikTok! →</a>
-                </div>
+/* --- NEW: See-Through Glass Header Bar --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 0, 127, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
 
-                <div class="project-item">
-                    <span class="card-badge">Analytics</span>
-                    <h3>Digital Optimization & Audit Initiatives</h3>
-                    <p class="project-tags">SEO Audit • UX Strategy</p>
-                    <p>Conducting detailed digital infrastructure evaluations and user experience reviews to boost conversion rates, streamline web navigation, and implement clean digital infrastructure.</p>
-                    <a href="https://www.linkedin.com/in/samzheng99/" target="_blank" rel="noopener noreferrer" class="project-link">Connect with me on LinkedIn! →</a>
-                </div>
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 88%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
 
-                <div class="project-item">
-                    <span class="card-badge">Corporate Strategy</span>
-                    <h3>Market Research & Communications</h3>
-                    <p class="project-tags">Corporate Innovation • Insights</p>
-                    <p>Formulating strategic market research and forward-thinking corporate communications frameworks to seamlessly integrate modern digital tools into established industry landscapes.</p>
-                    <a href="https://www.youtube.com/@SamanthaZheng" target="_blank" rel="noopener noreferrer" class="project-link">Subscribe to see me strategize! →</a>
-                </div>
+/* NEW: Logo Icon Styling */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: var(--text-light);
+    text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+}
 
-            </div>
-        </section>
+.nav-logo-icon {
+    height: 35px;
+    width: auto;
+    margin-right: 12px;
+}
 
-        <section id="contact" class="glass-card contact-section">
-            <h2>Give me Sam-thing to talk about!</h2>
-            <p>Whether you wanna speak about collaborating together, swapping life advice, sharing beauty tips, or anything under the sun, don't be shy! Drop me a line Sam-time!</p>
-            <div class="social-links">
-                <a href="mailto:spamzheng99@gmail.com">Email</a>
-                <a href="https://www.linkedin.com/in/samzheng99/" target="_blank">LinkedIn</a>
-                <a href="https://www.tiktok.com/@samzheng99" target="_blank">TikTok</a>
-                <a href="https://www.instagram.com/samzheng99/" target="_blank">Instagram</a>
-                <a href="https://www.youtube.com/@SamanthaZheng" target="_blank">YouTube</a>
-            </div>
-        </section>
+.nav-logo:hover {
+    text-shadow: 0 0 15px #ffb3d9, 0 0 25px #ff007f;
+}
 
-        <p class="copyright">Shown with ♡ by: © Samantha Zheng ✿⁠</p>
+/* NEW: Girly Script Font & Sparkle Animation for Links */
+.nav-links a {
+    font-family: 'Dancing Script', cursive;
+    text-decoration: none;
+    color: var(--text-light);
+    margin-left: 30px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    position: relative;
+}
 
-    </div>
+.nav-links a::after {
+    content: ' ✨';
+    opacity: 0;
+    position: absolute;
+    right: -25px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: scale(0.5);
+}
 
-    <script>
-        const phrases = [
-            "I am a content creator.", 
-            "I am a daughter.", 
-            "I am a leader.", 
-            "I am a social media influencer.", 
-            "I am Sam."
-        ];
-        let i = 0;
+.nav-links a:hover {
+    opacity: 1;
+    color: #ffdbf0;
+    text-shadow: 0 0 10px #ffb3d9, 0 0 20px #ff007f;
+    transform: scale(1.05);
+}
 
-        function typingEffect() {
-            let letters = phrases[i].split("");
-            var loopTyping = function() {
-                if (letters.length > 0) {
-                    document.getElementById('typewriter').innerHTML += letters.shift();
-                    setTimeout(loopTyping, 80);
-                } else {
-                    setTimeout(deletingEffect, 2000);
-                }
-            };
-            loopTyping();
-        }
+.nav-links a:hover::after {
+    opacity: 1;
+    transform: scale(1);
+}
 
-        function deletingEffect() {
-            let letters = phrases[i].split("");
-            var loopDeleting = function() {
-                if (letters.length > 0) {
-                    letters.pop();
-                    document.getElementById('typewriter').innerHTML = letters.join("");
-                    setTimeout(loopDeleting, 40);
-                } else {
-                    i = (i + 1) % phrases.length;
-                    setTimeout(typingEffect, 400);
-                }
-            };
-            loopDeleting();
-        }
+/* Layout Center Wrapper */
+.main-wrapper {
+    width: 95%; 
+    max-width: 1250px; 
+    margin: 140px auto 60px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
 
-        typingEffect();
-    </script>
-</body>
-</html>
+/* --- ADJUSTED: ALL boxes are now highly transparent! --- */
+.glass-card {
+    background: var(--glass-bg);
+    border-radius: 24px;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 50px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Hero Content */
+.hero-section {
+    text-align: center;
+    max-width: 580px; 
+    margin-left: auto; 
+    margin-right: 0;
+    padding: 60px 40px; 
+}
+
+.sparkle-icon {
+    font-size: 2rem;
+    margin-
