@@ -73,10 +73,10 @@ body {
     text-shadow: 0 0 8px rgba(255,255,255,0.6);
 }
 
-/* Layout Center Wrapper */
+/* Layout Center Wrapper - MADE WIDER TO PUSH BOX RIGHT */
 .main-wrapper {
-    width: 90%;
-    max-width: 1000px;
+    width: 95%; /* Takes up more of the screen */
+    max-width: 1250px; /* Allows the right side to go much further out */
     margin: 140px auto 60px auto;
     display: flex;
     flex-direction: column;
@@ -94,15 +94,14 @@ body {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 
-/* --- NEW: Hero Content Adjusted to the Right & Highly Transparent --- */
+/* --- ADJUSTED: Hero Content Pushed All The Way Right --- */
 .hero-section {
     text-align: center;
-    max-width: 650px; /* Makes the box wider */
-    margin-left: auto; /* Pushes the box entirely to the right side */
+    max-width: 580px; /* Slimmed down a tiny bit to clear your face */
+    margin-left: auto; /* Pushes the box to the absolute right */
     margin-right: 0;
     padding: 60px 40px; 
     
-    /* Makes it very see-through to show the skyscrapers */
     background: rgba(255, 255, 255, 0.04); 
     backdrop-filter: blur(4px); 
     -webkit-backdrop-filter: blur(4px);
@@ -155,7 +154,7 @@ body {
     text-shadow: 0 0 10px rgba(255,0,127,0.7);
 }
 
-/* --- NEW: Fun Interactive Pulse Button --- */
+/* Fun Interactive Pulse Button */
 .fun-btn {
     display: inline-block;
     padding: 16px 40px;
@@ -169,7 +168,7 @@ body {
     text-transform: uppercase;
     box-shadow: 0 4px 15px rgba(255, 0, 127, 0.4);
     transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-    animation: pulse 2s infinite; /* Adds the glowing heartbeat effect */
+    animation: pulse 2s infinite;
 }
 
 .fun-btn:hover {
