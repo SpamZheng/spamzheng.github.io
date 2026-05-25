@@ -26,7 +26,7 @@
             <div class="sparkle-icon">✨</div>
             <h1>Hi, I'm Samantha Zheng</h1>
             
-            <p class="subtitle">I am a <span id="typewriter"></span><span class="cursor">|</span></p>
+            <p class="subtitle"><span id="typewriter"></span><span class="cursor">|</span></p>
             
             <p class="bio">
                 Welcome to my digital space! I am an MBA student specializing in the intersection of 
@@ -84,40 +84,46 @@
     </div>
 
     <script>
-        const words = ["Content Creator", "Business Strategist", "Developer", "Coder"];
+        const phrases = [
+            "I am a content creator.", 
+            "I am a daughter.", 
+            "I am an MBA student.", 
+            "I am a social media influencer.", 
+            "I am Samantha Zheng."
+        ];
         let i = 0;
         let timer;
 
         function typingEffect() {
-            let word = words[i].split("");
+            let letters = phrases[i].split("");
             var loopTyping = function() {
-                if (word.length > 0) {
-                    document.getElementById('typewriter').innerHTML += word.shift();
+                if (letters.length > 0) {
+                    document.getElementById('typewriter').innerHTML += letters.shift();
                 } else {
-                    setTimeout(deletingEffect, 2000); // How long it stays typed before backspacing
+                    setTimeout(deletingEffect, 2000); // Wait time before backspacing starts
                     return false;
                 }
-                timer = setTimeout(loopTyping, 100); // Typing speed
+                timer = setTimeout(loopTyping, 80); // Speed of typing letters
             };
             loopTyping();
         }
 
         function deletingEffect() {
-            let word = words[i].split("");
+            let letters = phrases[i].split("");
             var loopDeleting = function() {
-                if (word.length > 0) {
-                    word.pop();
-                    document.getElementById('typewriter').innerHTML = word.join("");
+                if (letters.length > 0) {
+                    letters.pop();
+                    document.getElementById('typewriter').innerHTML = letters.join("");
                 } else {
-                    if (words.length > (i + 1)) {
+                    if (phrases.length > (i + 1)) {
                         i++;
                     } else {
                         i = 0;
                     }
-                    setTimeout(typingEffect, 500); // Break time before next word starts typing
+                    setTimeout(typingEffect, 400); // Break time before typing the next phrase
                     return false;
                 }
-                timer = setTimeout(loopDeleting, 60); // Backspacing speed
+                timer = setTimeout(loopDeleting, 40); // Speed of backspacing letters
             };
             loopDeleting();
         }
