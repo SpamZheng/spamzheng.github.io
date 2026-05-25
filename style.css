@@ -21,7 +21,7 @@ body {
     -webkit-font-smoothing: antialiased;
     
     /* Full-screen fixed background picture */
-    background: linear-gradient(rgba(255, 0, 127, 0.35), rgba(40, 0, 20, 0.65)), url('background.jpg') no-repeat center center fixed;
+    background: linear-gradient(rgba(255, 0, 127, 0.25), rgba(40, 0, 20, 0.55)), url('background.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -76,7 +76,7 @@ body {
 /* Layout Center Wrapper */
 .main-wrapper {
     width: 90%;
-    max-width: 950px;
+    max-width: 1000px;
     margin: 140px auto 60px auto;
     display: flex;
     flex-direction: column;
@@ -94,9 +94,19 @@ body {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 
-/* Hero Content */
+/* --- NEW: Hero Content Adjusted to the Right & Highly Transparent --- */
 .hero-section {
     text-align: center;
+    max-width: 650px; /* Makes the box wider */
+    margin-left: auto; /* Pushes the box entirely to the right side */
+    margin-right: 0;
+    padding: 60px 40px; 
+    
+    /* Makes it very see-through to show the skyscrapers */
+    background: rgba(255, 255, 255, 0.04); 
+    backdrop-filter: blur(4px); 
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .sparkle-icon {
@@ -108,14 +118,14 @@ body {
 
 .hero-section h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 3.4rem;
+    font-size: 3.6rem;
     font-weight: 400;
     margin-bottom: 12px;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 .subtitle {
-    font-size: 1rem;
+    font-size: 1.05rem;
     color: var(--text-accent);
     margin-bottom: 25px;
     text-transform: uppercase;
@@ -134,37 +144,44 @@ body {
 .bio {
     max-width: 720px;
     margin: 0 auto 40px auto;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 300;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.4);
 }
 
 .bio strong {
     font-weight: 600;
     color: #fff;
-    text-shadow: 0 0 10px rgba(255,0,127,0.5);
+    text-shadow: 0 0 10px rgba(255,0,127,0.7);
 }
 
-/* Girly Rounded Button */
-.btn {
+/* --- NEW: Fun Interactive Pulse Button --- */
+.fun-btn {
     display: inline-block;
-    padding: 14px 38px;
-    background: var(--text-light);
-    color: #b30059;
+    padding: 16px 40px;
+    background: linear-gradient(45deg, #ff007f, #ff66b2);
+    color: #ffffff !important;
     text-decoration: none;
     border-radius: 50px;
-    font-weight: 600;
-    font-size: 0.85rem;
-    letter-spacing: 1.5px;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    box-shadow: 0 4px 15px rgba(255, 0, 127, 0.3);
-    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 4px 15px rgba(255, 0, 127, 0.4);
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    animation: pulse 2s infinite; /* Adds the glowing heartbeat effect */
 }
 
-.btn:hover {
-    background: #ff007f;
-    color: var(--text-light);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(255, 0, 127, 0.5);
+.fun-btn:hover {
+    transform: scale(1.08) translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 0, 127, 0.6);
+    background: linear-gradient(45deg, #ff66b2, #ff007f);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 0, 127, 0.6); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 0, 127, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 0, 127, 0); }
 }
 
 /* Portfolio Layout */
@@ -300,7 +317,8 @@ body {
 /* Mobile Devices Optimize */
 @media (max-width: 768px) {
     .nav-links { display: none; }
-    .hero-section h1 { font-size: 2.4rem; }
+    .hero-section { margin-left: auto; margin-right: auto; max-width: 90%; }
+    .hero-section h1 { font-size: 2.8rem; }
     .glass-card { padding: 30px 20px; }
     .social-links { display: flex; flex-direction: column; gap: 15px; }
 }
