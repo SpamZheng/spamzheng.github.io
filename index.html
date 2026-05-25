@@ -14,7 +14,7 @@
             <a href="#" class="nav-logo">Samantha Zheng</a>
             <div class="nav-links">
                 <a href="#about">Starring: Sam Zheng!</a>
-                <a href="#portfolio">See more about Sam!</a>
+                <a href="#portfolio">See Sam more!</a>
                 <a href="#contact">Say hi to Sam!</a>
             </div>
         </div>
@@ -34,7 +34,7 @@
                 digital creator managing brand collaborations and executing data-driven digital marketing campaigns. 
                 I love making creative visions come to life.
             </p>
-            <a href="resume.pdf" target="_blank" class="fun-btn">See more about Sam! 👋</a>
+            <a href="resume.pdf" target="_blank" class="fun-btn">See Sam more! 👋</a>
         </section>
 
         <section id="portfolio" class="glass-card portfolio-section">
@@ -46,7 +46,7 @@
                     <h3>TikTok Business Strategy & Creator Campaigns</h3>
                     <p class="project-tags">Influencer Marketing • Brand Growth</p>
                     <p>Managing end-to-end creative assets and affiliate initiatives. Optimizing content performance, tracking conversion rate data, and building community engagement for top-tier beauty and fashion brands.</p>
-                    <a href="#" class="project-link">Watch me on TikTok! →</a>
+                    <a href="https://www.tiktok.com/@samzheng99" target="_blank" rel="noopener noreferrer" class="project-link">Watch me on TikTok! →</a>
                 </div>
 
                 <div class="project-item">
@@ -54,7 +54,7 @@
                     <h3>Digital Optimization & Audit Initiatives</h3>
                     <p class="project-tags">SEO Audit • UX Strategy</p>
                     <p>Conducting detailed digital infrastructure evaluations and user experience reviews to boost conversion rates, streamline web navigation, and implement clean digital infrastructure.</p>
-                    <a href="#" class="project-link">Connect with me on LinkedIn! →</a>
+                    <a href="https://www.linkedin.com/in/samzheng99/" target="_blank" rel="noopener noreferrer" class="project-link">Connect with me on LinkedIn! →</a>
                 </div>
 
                 <div class="project-item">
@@ -62,7 +62,7 @@
                     <h3>Market Research & Communications</h3>
                     <p class="project-tags">Corporate Innovation • Insights</p>
                     <p>Formulating strategic market research and forward-thinking corporate communications frameworks to seamlessly integrate modern digital tools into established industry landscapes.</p>
-                    <a href="#" class="project-link">Subscribe to see me strategize! →</a>
+                    <a href="https://www.youtube.com/@SamanthaZheng" target="_blank" rel="noopener noreferrer" class="project-link">Subscribe to see me strategize! →</a>
                 </div>
 
             </div>
@@ -80,7 +80,7 @@
             </div>
         </section>
 
-        <p class="copyright">Designed with ♡ • © 2026 Samantha Zheng</p>
+        <p class="copyright">Shown with ♡ • © 2026 Samantha Zheng</p>
 
     </div>
 
@@ -88,23 +88,21 @@
         const phrases = [
             "I am a content creator.", 
             "I am a daughter.", 
-            "I am an MBA student.", 
+            "I am an leader.", 
             "I am a social media influencer.", 
             "I am Sam."
         ];
         let i = 0;
-        let timer;
 
         function typingEffect() {
             let letters = phrases[i].split("");
             var loopTyping = function() {
                 if (letters.length > 0) {
                     document.getElementById('typewriter').innerHTML += letters.shift();
+                    setTimeout(loopTyping, 80);
                 } else {
                     setTimeout(deletingEffect, 2000);
-                    return false;
                 }
-                timer = setTimeout(loopTyping, 80);
             };
             loopTyping();
         }
@@ -115,22 +113,16 @@
                 if (letters.length > 0) {
                     letters.pop();
                     document.getElementById('typewriter').innerHTML = letters.join("");
+                    setTimeout(loopDeleting, 40);
                 } else {
-                    if (phrases.length > (i + 1)) {
-                        i++;
-                    } else {
-                        i = 0;
-                    }
+                    i = (i + 1) % phrases.length;
                     setTimeout(typingEffect, 400);
-                    return false;
                 }
-                timer = setTimeout(loopDeleting, 40);
             };
             loopDeleting();
         }
 
         typingEffect();
     </script>
-
 </body>
 </html>
